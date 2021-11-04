@@ -2137,7 +2137,7 @@ const dat = [
     ["1934", "厝"],
     ["1935", "叟"],
     ["1936", "哥"],
-    ["1937", "唐"],
+    ["1937", "唐"], // Like 庚1552, the middle stroke is not sticking out; the bottom stroke is.
     ["1938", "哲"],
     ["1939", "哭"],
     ["1940", "哩"],
