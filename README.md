@@ -7,3 +7,6 @@ https://www.fastcompany.com/90635203/ibm-chinese-typewriter-lois-lew
 * 2021/11/04 常用字索引 (0100-1103) completed
 * 2021/11/22 次常用字索引 (1104-4199) completed
 * 2021/12/25 備用字索引 (4200-5389) completed
+
+## Try it out
+https://sozysozbot.github.io/dianhua-daziji/index.html
