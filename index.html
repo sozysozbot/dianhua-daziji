@@ -108,6 +108,23 @@
 			"。": char_to_code_raw("."),
 		}[char]) ?? char_to_code_raw(char)
 		const char_to_code_raw = (char) => dat.filter(([cod, chr]) => char === chr)[0]?.[0] ?? `xxxx(${char})`;
+
+		const key_map = "012345 pqwertyuio ;asdfghjkl /zxcvbnm,.".split(" ").map(keys => keys.split(""));
+		const special_key_map = {
+			"Backspace": "BS",
+			"Tab": "TAB",
+			"Enter": "CR",
+			" ": "SP",
+		};
+		function keyDownEvent(event) {
+			if(event.key == "Tab") { event.preventDefault(); }
+
+			if(event.key in special_key_map) { main(special_key_map[event.key]); }
+			else if(key_map[0].includes(event.key)) { rowA("" + key_map[0].indexOf(event.key)); }
+			else if(key_map[1].includes(event.key)) { rowB("" + key_map[1].indexOf(event.key)); }
+			else if(key_map[2].includes(event.key)) { rowC("" + key_map[2].indexOf(event.key)); }
+			else if(key_map[3].includes(event.key)) { rowD("" + key_map[3].indexOf(event.key)); }
+		}
 	</script>
 	<style>
 		circle:hover { opacity: 0.5; }
@@ -318,5 +335,6 @@
 <script>
 document.write([...`這是第一架電動華文打字機
 這架打字機有五千四百個字，包括英文字母。`].map(char_to_code).join(" "));
+document.addEventListener("keydown", keyDownEvent);
 </script>
 <p><a href="https://github.com/sozysozbot/dianhua-daziji/blob/master/raw_data.js" target="_blank"><span lang="zh-TW">檢字表</span> / <span lang="zh-CN">检字表</span> / <span lang="ja">コード一覧</span> / <span lang="en">lookup table</span></a></p>
